@@ -13,9 +13,12 @@ const ALLOWED_ORIGINS = (
 ).split(",");
 
 const PLAYLIST = [
-  `${R2_BASE_URL}/1.mp3`,
-  `${R2_BASE_URL}/2.mp3`,
-  `${R2_BASE_URL}/3.mp3`,
+  `${R2_BASE_URL}/Luv(Sic) (Clean Version).mp3`,
+  `${R2_BASE_URL}/Luv(sic) Part 2 (Original Version.mp3`,
+  `${R2_BASE_URL}/Luv(sic) Part 3 (feat. Shing02) (Vocal).mp3`,
+  `${R2_BASE_URL}/Luv(sic) Part 4 (Original Version).mp3`,
+  `${R2_BASE_URL}/Luv(sic) Part 5 (feat. Shing02) (Original).mp3`,
+  `${R2_BASE_URL}/Luv(sic) Part 6 (feat. Shing02).mp3`,
 ] as const;
 
 // Types
