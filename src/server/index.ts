@@ -134,6 +134,17 @@ function handleSocketConnection(socket: Socket): void {
   });
 }
 
+// Add a route to check the server state
+app.get("/status", (req, res) => {
+  res.json({
+    status: "ok",
+    currentTrack: playbackState.currentTrack,
+    isPlaying: playbackState.isPlaying,
+    currentPosition: playbackState.currentPosition,
+    serverTime: Date.now(),
+  });
+});
+
 // Start the server
 async function startServer(): Promise<void> {
   try {
