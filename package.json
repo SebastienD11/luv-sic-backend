@@ -2,6 +2,7 @@
   "name": "luv-sic-backend",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "dev": "ts-node src/server/index.ts",
     "build": "tsc",
