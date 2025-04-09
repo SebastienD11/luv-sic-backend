@@ -53,6 +53,8 @@ let playbackState: PlaybackState = {
   trackDurations: {},
 };
 
+let listenerCount = 0;
+
 async function getMP3Duration(url: string): Promise<number> {
   try {
     const response = await fetch(url);
@@ -113,6 +115,8 @@ function updatePlaybackState(): void {
 // Socket.IO event handlers
 function handleSocketConnection(socket: Socket): void {
   console.log("New client connected");
+  listenerCount++;
+  io.emit("listenerCount", listenerCount);
 
   // Send current state to new client
   socket.emit("playbackState", {
@@ -134,6 +138,8 @@ function handleSocketConnection(socket: Socket): void {
 
   socket.on("disconnect", () => {
     console.log("Client disconnected");
+    listenerCount--;
+    io.emit("listenerCount", listenerCount);
   });
 }
 
