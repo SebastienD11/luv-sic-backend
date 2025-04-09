@@ -4,7 +4,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "ts-node src/server/index.ts",
+    "dev": "NODE_OPTIONS=\"--loader ts-node/esm\" ts-node src/server/index.ts",
     "build": "tsc",
     "start": "node dist/server/index.js"
   },
